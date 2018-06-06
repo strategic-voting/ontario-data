@@ -8,9 +8,8 @@ riding_data_without_header = riding_projections_table.search('tr').drop(1)
 riding_projections = riding_data_without_header.each_with_object({}) do |tr, ridings|
   parties = tr.search('td')
     .map(&:text)
-    .map(&:to_i)
   riding_name = parties[0]
-  lib, pc, ndp, green = parties[2], parties[3], parties[4], parties[5]
+  lib, pc, ndp, green = parties[2..5].map(&:to_i)
   ridings[riding_name] = {
     green: green,
     lib: lib,
