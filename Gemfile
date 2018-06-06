@@ -2,4 +2,8 @@
 source 'https://rubygems.org'
 
 gem 'nokogiri', '1.8.2'
-gem 'pry'
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-coolline'
+end
