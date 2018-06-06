@@ -18,3 +18,7 @@ riding_projections = riding_data_without_header.each_with_object({}) do |tr, rid
     pc: pc,
   }
 end
+
+File.open('per_riding_projections.json', 'w') do |file|
+  file.write(riding_projections.to_json)
+end
